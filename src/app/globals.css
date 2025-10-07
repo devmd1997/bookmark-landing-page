@@ -1,26 +1,246 @@
+@import url("https://fonts.googleapis.com/css2?family=Rubik:ital,wght@0,300..900;1,300..900&display=swap");
 @import "tailwindcss";
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
+@theme {
+  --color-white: #fff;
+  --color-black: #000;
+
+  --color-blue-950: #242a45;
+  --color-blue-600: #5267df;
+  --color-grey-600: #5b6074;
+  --color-grey-50: #f7f7f7;
+
+  --color-gradient-1: #151515;
+  --color-gradient-2: #3d3d3d;
+
+  --color-border-subtle: #495dcf;
+
+  --color-red-400: #fa5959;
+
+  --shadow-default: 0 10px 20px -5px rgba(73, 93, 207, 0.05);
+
+  --font-rubik: "Rubik", sans-serif;
+
+  --font-light: 300;
+  --font-regular: 400;
+  --font-medium: 500;
+  --font-semibold: 600;
+  --font-bold: 700;
+
+  /* Font Sizes */
+
+  --text-3xl: 48px;
+  --text-2xl: 32px;
+  --text-xl: 20px;
+  --text-lg: 18px;
+  --text-base: 16px;
+  --text-sm: 14px;
+  --text-xs: 12px;
+  --text-2xs: 10px;
+
+  /* Spacing */
+  --spacing: 8px;
+
+  --breakpoint-sm: 375px;
+  --breakpoint-md: 768px;
+  --breakpoint-lg: 1440px;
+
+  --radius-xs: 5px;
+  --radius-sm: 10px;
+  --radius-md: 15px;
+  --radius-lg: 25px;
 }
 
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
-}
+@utility text-preset-1 {
+  /* Mobile */
+  font-size: calc(var(--text-2xl) - 2px);
+  line-height: 135%;
+  font-weight: var(--font-medium);
+  letter-spacing: 0px;
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+  /* Desktop and Tablet */
+  @variant min-md {
+    font-size: var(--text-3xl);
+    line-height: 110%;
   }
 }
 
-body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+@utility text-preset-2 {
+  /* Mobile */
+  font-size: calc(var(--text-base) - 1px);
+  line-height: 125%;
+  font-weight: var(--font-medium);
+  letter-spacing: 0px;
+
+  /* Desktop and Tablet */
+  @variant min-md {
+    font-size: var(--text-2xl);
+    line-height: 125%;
+    letter-spacing: -0.1px;
+  }
+}
+
+@utility text-preset-2-medium {
+  /* Mobile */
+  font-size: calc(var(--text-base) - 1px);
+  line-height: 200%;
+  font-weight: var(--font-medium);
+  letter-spacing: 0px;
+
+  /* Desktop and Tablet */
+  @variant min-md {
+    font-size: var(--text-2xl);
+    font-weight: var(--font-medium);
+    line-height: 125%;
+    letter-spacing: -0.1px;
+  }
+}
+
+@utility text-preset-2-regular {
+  /* Mobile */
+  font-size: calc(var(--text-base) - 1px);
+  line-height: 165%;
+  font-weight: var(--font-regular);
+  letter-spacing: 0px;
+
+  /* Desktop and Tablet */
+  @variant min-md {
+    font-size: var(--text-2xl);
+    font-weight: var(--font-medium);
+    line-height: 125%;
+    letter-spacing: -0.1px;
+  }
+}
+
+@utility text-preset-2-light {
+  /* Mobile */
+  font-size: calc(var(--text-base) - 1px);
+  line-height: 165%;
+  font-weight: var(--font-light);
+  letter-spacing: 0px;
+
+  /* Desktop and Tablet */
+  @variant min-md {
+    font-size: var(--text-2xl);
+    font-weight: var(--font-medium);
+    line-height: 125%;
+    letter-spacing: -0.1px;
+  }
+}
+
+@utility text-preset-3 {
+  /* Mobile */
+  font-size: calc(var(--text-sm) - 2px);
+  line-height: 300%;
+  font-weight: var(--font-medium);
+  letter-spacing: 5px;
+
+  /* Desktop and Tablet */
+  @variant min-md {
+    font-size: var(--text-xl);
+    line-height: 125%;
+    letter-spacing: 0.25px;
+  }
+}
+
+@utility text-preset-4 {
+  /* Mobile */
+  font-size: var(--text-2xs);
+  line-height: 120%;
+  font-weight: var(--font-medium);
+  letter-spacing: 0.25px;
+  font-style: italic;
+
+  /* Desktop and Tablet */
+  @variant min-md {
+    font-size: var(--text-base);
+    line-height: 225%;
+    letter-spacing: 0.5px;
+    font-style: normal;
+    font-weight: var(--font-light);
+  }
+}
+
+@utility text-preset-5-light {
+  font-size: var(--text-base);
+  line-height: 225%;
+  letter-spacing: 0.5px;
+  font-weight: var(--font-light);
+}
+
+@utility text-preset-5-regular {
+  font-size: var(--text-base);
+  line-height: 110%;
+  letter-spacing: 0.5px;
+  font-weight: var(--font-regular);
+}
+
+@utility text-preset-6-medium {
+  font-size: var(--text-sm);
+  line-height: 200%;
+  letter-spacing: 0.25px;
+  font-weight: var(--font-medium);
+}
+
+@utility text-preset-6-regular {
+  font-size: var(--text-sm);
+  line-height: 200%;
+  letter-spacing: 0.25px;
+  font-weight: var(--font-regular);
+}
+
+@utility text-preset-6-semibold {
+  font-size: var(--text-sm);
+  line-height: 300%;
+  letter-spacing: 5px;
+  font-weight: var(--font-regular);
+}
+
+@utility text-preset-7 {
+  font-size: var(--text-2xs);
+  line-height: 129%;
+  letter-spacing: 0.25px;
+  font-weight: var(--font-medium);
+  font-style: italic;
+}
+
+@utility hpadding {
+  padding-inline: calc(var(--spacing) * 4);
+
+  @variant min-md {
+    padding-inline: calc(var(--spacing) * 10);
+  }
+
+  @variant min-lg {
+    padding-inline: calc(var(--spacing) * 21);
+  }
+}
+
+@utility button-layout {
+  padding-inline: calc(var(--spacing) * 2);
+  padding-block: var(--spacing);
+  border-radius: var(--radius-xs);
+  width: fit-content;
+}
+
+@layer base {
+  body {
+    @apply bg-white flex flex-col pt-5 lg:pt-6 min-h-screen relative overflow-x-clip;
+  }
+
+  nav {
+    @apply flex flex-row hpadding justify-between items-center pb-5 lg:pb-6;
+  }
+
+  button {
+    @apply cursor-pointer;
+  }
+
+  main {
+    @apply flex flex-col gap-16 lg:gap-10 hpadding items-center justify-center;
+  }
+
+  a {
+    @apply cursor-pointer;
+  }
 }

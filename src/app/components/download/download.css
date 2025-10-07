@@ -1,0 +1,44 @@
+@import "../../globals.css";
+
+@layer components {
+  .download-container {
+    @apply flex flex-col gap-5 md:gap-8 lg:gap-6 w-full lg:w-fit justify-center items-center;
+  }
+
+  .download-list {
+    @apply flex flex-col md:flex-row gap-5 md:gap-1 lg:gap-4;
+  }
+
+  .download-list li {
+    @apply flex flex-col w-full gap-3 py-2 px-2 rounded-md bg-white shadow-default justify-center items-center;
+  }
+
+  .download-list li:nth-child(2) {
+    @apply lg:mt-5;
+  }
+
+  .download-list li:nth-child(3) {
+    @apply lg:mt-10;
+  }
+
+  .download-item-content {
+    @apply flex flex-col gap-4 md:gap-2 lg:gap-3 justify-center items-center;
+    @apply max-w-[280px];
+  }
+
+  .download-text-content {
+    @apply flex flex-col gap-1 text-center md:gap-2;
+  }
+
+  .download-text-content h1 {
+    @apply font-medium text-[24px] leading-[200%] md:text-preset-3 text-blue-950 capitalize;
+  }
+
+  .download-text-content p {
+    @apply text-preset-2-regular md:text-preset-6-regular text-blue-950/50 capitalize;
+  }
+
+  .download-image-container {
+    @apply w-[105px] h-[100px] md:w-[74px] md:h-[70px] relative;
+  }
+}

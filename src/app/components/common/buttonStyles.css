@@ -1,0 +1,18 @@
+@import "../../globals.css";
+
+@layer components {
+  .button-primary {
+    @apply button-layout bg-blue-600 border border-blue-600 text-white text-preset-2-medium md:text-preset-6-medium;
+    @apply hover:bg-white hover:text-blue-600;
+  }
+
+  .button-secondary {
+    @apply button-layout bg-grey-50 text-blue-950 border border-grey-50 text-preset-2-medium md:text-preset-6-medium;
+    @apply hover:bg-white hover:text-grey-600 hover:border-grey-600 hover:border;
+  }
+
+  .button-tertirary {
+    @apply button-layout bg-red-400 border-red-400 border text-white text-preset-2-medium md:text-preset-6-medium;
+    @apply hover:bg-white hover:text-red-400;
+  }
+}

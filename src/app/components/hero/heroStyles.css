@@ -1,0 +1,29 @@
+@import "../../globals.css";
+
+@layer components {
+  .hero-illustration-container {
+    @apply flex flex-col justify-center items-center w-full py-5 relative;
+  }
+
+  .hero-illustration-image {
+    @apply w-full max-w-[575px] max-h-[382px] p-1 rounded-[13px] relative flex items-center justify-center;
+    aspect-ratio: 575 / 382;
+    background: linear-gradient(
+      124deg,
+      var(--color-gradient-1) 0%,
+      var(--color-gradient-2) 100%
+    );
+  }
+
+  .hero-container {
+    @apply flex flex-col lg:flex-row-reverse gap-6 md:gap-9 items-center justify-center;
+  }
+
+  .button-container {
+    @apply flex flex-row justify-between items-center gap-1 max-w-[343px];
+  }
+
+  .hero-content {
+    @apply flex flex-col gap-3 justify-center items-center;
+  }
+}

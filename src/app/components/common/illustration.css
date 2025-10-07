@@ -1,0 +1,33 @@
+@import "../../globals.css";
+
+@layer components {
+  .illustration-container {
+    @apply flex flex-col justify-center items-center w-full py-5 relative;
+  }
+
+  .illustration-image {
+    @apply w-full max-w-[575px] max-h-[382px] p-1 rounded-[13px] relative flex items-center justify-center;
+    aspect-ratio: 575 / 382;
+  }
+
+  .illustration-image.border {
+    background: linear-gradient(
+      124deg,
+      var(--color-gradient-1) 0%,
+      var(--color-gradient-2) 100%
+    );
+  }
+
+  .pill-illustration {
+    @apply w-[154vw] md:max-w-[1000px] max-h-[352px] bg-blue-600 rounded-full absolute bottom-0 -z-10;
+    aspect-ratio: 577 / 203;
+  }
+
+  .pill-illustration.right {
+    @apply left-[20vw] md:right-[-25vw];
+  }
+
+  .pill-illustration.left {
+    @apply right-[20vw] md:left-[-45vw];
+  }
+}

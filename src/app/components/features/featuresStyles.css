@@ -1,0 +1,38 @@
+@import "../../globals.css";
+
+@layer components {
+  .features-container {
+    @apply flex flex-col gap-4 md:gap-8 items-center justify-center;
+  }
+
+  .features-list-container {
+    @apply flex flex-col;
+  }
+
+  .features-list {
+    @apply flex flex-col md:flex-row md:justify-around text-center md:border-b md:border-border-subtle/20;
+  }
+
+  .features-list li {
+    @apply text-preset-2-regular md:text-preset-5-regular text-blue-950/75 py-2 max-md:border-b max-md:border-border-subtle/20 cursor-pointer;
+    @apply relative;
+  }
+
+  .features-list li.selected::after {
+    content: "";
+    @apply absolute bg-red-400 text-blue-950/100;
+    width: 163px;
+    height: 4px;
+    bottom: -2px; /* Position it just below the text */
+    left: 50%;
+    transform: translateX(-50%);
+  }
+
+  .bookmark-section {
+    @apply flex flex-col gap-2 justify-center items-center max-w-[450px];
+  }
+
+  .bookmark-details {
+    @apply flex flex-col lg:flex-row gap-2 justify-center items-center;
+  }
+}

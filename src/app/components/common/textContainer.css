@@ -1,0 +1,31 @@
+@import "../../globals.css";
+
+@layer components {
+  .text-container {
+    @apply flex flex-col text-center w-full;
+  }
+
+  .text-container.extend {
+    @apply gap-3;
+  }
+
+  .text-container.compact {
+    @apply gap-2;
+  }
+
+  .text-container h1 {
+    @apply text-preset-1 md:text-preset-2 text-blue-950;
+
+    @variant max-md {
+      white-space: pre-line;
+    }
+  }
+
+  .text-container h1.display {
+    @apply text-preset-1 md:text-preset-1;
+  }
+
+  .text-container p {
+    @apply text-preset-2-regular md:text-preset-4 text-blue-950/50;
+  }
+}

@@ -1,0 +1,23 @@
+@import "../../globals.css";
+
+@layer components {
+  .footer-container {
+    @apply bg-blue-950 flex flex-col md:flex-row px-14 py-2 md:py-3 md:hpadding gap-6 justify-center md:justify-between items-center;
+  }
+
+  .footer-container ul {
+    @apply flex flex-col md:flex-row gap-3;
+  }
+
+  .footer-container ul li {
+    @apply text-white hover:text-red-400 text-preset-2-regular md:text-preset-6-regular uppercase;
+  }
+
+  .icon-container {
+    @apply flex flex-row gap-5 md:gap-3 justify-center items-center;
+  }
+
+  .icon {
+    @apply hover:fill-red-400;
+  }
+}
